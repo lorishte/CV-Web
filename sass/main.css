@@ -255,7 +255,8 @@ body {
     width: auto;
     max-height: 2.5rem; }
   .skill__name {
-    line-height: 1.3; }
+    line-height: 1.3;
+    font-size: 1.6rem; }
 
 .progress-bar {
   position: relative; }
