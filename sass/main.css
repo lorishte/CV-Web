@@ -553,7 +553,7 @@ body {
 
 @media only screen and (max-width: 34.375em) {
   #skills .skill__name {
-    font-size: 1rem; } }
+    font-size: 1.4rem; } }
 
 .info {
   grid-column: 2/3; }
