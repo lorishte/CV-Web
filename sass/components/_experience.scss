@@ -1,0 +1,51 @@
+.experience {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	column-gap: 2rem;
+
+	padding: 4rem 0;
+	border-bottom: 1px solid $color-grey-light;
+
+	&__title {
+		font-weight: 700;
+		font-size: 1.8rem;
+		line-height: 1.4;
+	}
+
+	&__info {
+	}
+
+	&__date {
+		font-size: $font-size-sm;
+		color: $color-grey-medium;
+
+		&:after {
+			content: '/';
+			padding: 0 10px;
+			color: $color-primary;
+		}
+
+		@include respond(phone) {
+			display: block;
+		}
+	}
+
+	&__company {
+		//color: $color-grey-medium;
+	}
+
+	&__technologies {
+		color: $color-primary-dark;
+		font-size: 1.4rem;
+	}
+
+	&__description {
+		font-size: 1.4rem;
+		line-height: 1.5;
+		margin-top: 2rem;
+
+		ul li {
+			margin-left: 1.6rem;
+		}
+	}
+}

@@ -142,7 +142,7 @@ body {
       font-size: 1.7rem; } }
 
 .text-bold {
-  font-weight: 500; }
+  font-weight: 700; }
 
 .text-accent-bold {
   font-weight: 500;
@@ -217,7 +217,8 @@ body {
   padding: 2rem 0;
   border-bottom: 1px solid #eee; }
   .card__title {
-    color: #51ab81; }
+    color: #51ab81;
+    font-weight: 700; }
   .card__info {
     margin-top: 1rem; }
   .card__date {
@@ -292,6 +293,7 @@ body {
     display: grid !important;
     max-width: 3rem; }
   .project-card__name {
+    font-weight: 700;
     display: inline-block;
     transition: color ease-in-out .3s;
     transition-delay: 100ms;
@@ -390,6 +392,36 @@ body {
         opacity: 1;
         justify-self: end;
         bottom: 1.3rem; } }
+
+.experience {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 2rem;
+  padding: 4rem 0;
+  border-bottom: 1px solid #eee; }
+  .experience__title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.4; }
+  .experience__date {
+    font-size: 1.5rem;
+    color: #ababab; }
+    .experience__date:after {
+      content: '/';
+      padding: 0 10px;
+      color: #95cdb3; }
+    @media only screen and (max-width: 43.75em) {
+      .experience__date {
+        display: block; } }
+  .experience__technologies {
+    color: #51ab81;
+    font-size: 1.4rem; }
+  .experience__description {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-top: 2rem; }
+    .experience__description ul li {
+      margin-left: 1.6rem; }
 
 .navigation {
   grid-column: 2 / 3;
