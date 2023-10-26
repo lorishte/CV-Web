@@ -5,6 +5,7 @@
 	align-items: stretch;
 	padding: 1.3rem 2rem 1.8rem 2rem;
 	transition: all $transition-fast;
+	//border: 1px solid transparent;
 	border-left: 1px solid $color-primary-60;
 
 	@include respond('phone') {
@@ -14,8 +15,9 @@
 	}
 
 	&:hover {
-		//transform: translateY(-.65rem);
+		//transform: translateY(-.5rem);
 		//box-shadow: $box-shadow;
+		//border: 1px solid $color-primary-60;
 	}
 
 	&:hover &__cta {

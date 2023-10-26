@@ -1,10 +1,17 @@
 .experience {
 	display: grid;
 	grid-template-columns: auto 1fr;
-	column-gap: 2rem;
-
+	gap: .5rem 2rem;
 	padding: 4rem 0;
 	border-bottom: 1px solid $color-grey-light;
+
+	&:first-of-type {
+		padding-top: 2rem;
+	}
+
+	@include respond('phone') {
+		grid-template-columns: none;
+	}
 
 	&__title {
 		font-weight: 700;
@@ -44,8 +51,12 @@
 		line-height: 1.5;
 		margin-top: 2rem;
 
-		ul li {
-			margin-left: 1.6rem;
+		ul {
+			margin: .5rem 0;
+
+			li {
+				margin-left: 1.6rem;
+			}
 		}
 	}
 }

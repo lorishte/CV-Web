@@ -5,7 +5,11 @@
 	overflow-wrap: break-word;
 	align-items: center;
 	border-bottom: 1px solid $color-grey-light;
-	padding: 1.5rem 0;
+	padding: 2rem 0;
+
+	&:hover {
+		cursor: pointer;
+	}
 
 	&__info {
 
@@ -39,10 +43,6 @@
 		transition-delay: 50ms;
 		overflow-wrap: break-word;
 		line-height: 1.3;
-	}
-
-	&:hover {
-		cursor: default;
 	}
 
 	&:hover &__description{

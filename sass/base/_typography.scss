@@ -37,7 +37,7 @@ body {
     }
 
     @include respond(phone) {
-        font-size: 3rem;
+        font-size: 3.3rem;
         margin-bottom: 1rem;
     }
 }
