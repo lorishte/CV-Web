@@ -1,19 +1,21 @@
 // COLORS
 //$color-primary: #aba364;
 //$color-primary: #0DBB68;
-$color-primary: #95cdb3;
+$color-primary: #7b48bd;
 $color-primary-60: rgba($color-primary, 0.6);
 $color-primary-80: rgba($color-primary, 0.8);
 $color-primary-dark: darken($color-primary, 20);
+$color-secondary: $color-primary-80;
 
 
 $color-white: #fff;
-$color-grey-light-bg: #f3f8f2;
+//$color-grey-light-bg: #f3f8f2;
+$color-grey-light-bg: #8c6cff;
 
 $color-grey-light-header: #fbfbfb;
 $color-grey-light: #eee;
 $color-grey-medium: #ababab;
-$color-grey-dark: #313131;
+$color-grey-dark: #323248;
 $color-black: #000;
 
 $color-text-default: $color-grey-dark;

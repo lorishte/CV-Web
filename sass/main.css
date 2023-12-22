@@ -92,7 +92,7 @@ button {
   border: none; }
 
 a {
-  color: #313131; }
+  color: #323248; }
   a, a:link, a:visited {
     text-decoration: none; }
 
@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   font-family: 'Noah', sans-serif;
   font-weight: 400;
-  color: #313131;
+  color: #323248;
   font-size: 1.7rem;
   line-height: 1.7; }
   @media only screen and (max-width: 43.75em) {
@@ -146,7 +146,7 @@ body {
 
 .text-accent-bold {
   font-weight: 500;
-  color: #95cdb3; }
+  color: #7b48bd; }
 
 .u-center-text {
   text-align: center !important; }
@@ -197,12 +197,12 @@ body {
   font-size: 1.5rem;
   cursor: pointer; }
 .btn:hover {
-  background-color: #84c5a7; }
+  background-color: #6f3ead; }
 .btn:active, .btn:focus {
   outline: none; }
 .btn--primary {
   color: #fff;
-  background-color: #51ab81; }
+  background-color: #4b2a75; }
 .btn.xs {
   padding: .5rem .8rem;
   font-size: 1rem;
@@ -217,7 +217,7 @@ body {
   padding: 2rem 0;
   border-bottom: 1px solid #eee; }
   .card__title {
-    color: #51ab81;
+    color: #7b48bd;
     font-weight: 700; }
   .card__date {
     font-size: 1.5rem;
@@ -225,7 +225,7 @@ body {
     .card__date:after {
       content: '/';
       padding: 0 10px;
-      color: #95cdb3; }
+      color: #7b48bd; }
     @media only screen and (max-width: 43.75em) {
       .card__date {
         display: block; } }
@@ -271,7 +271,7 @@ body {
     align-self: stretch;
     width: 0;
     height: inherit;
-    background-color: #95cdb3;
+    background-color: #7b48bd;
     border-radius: 1rem;
     letter-spacing: .05rem;
     font-size: 0;
@@ -297,10 +297,11 @@ body {
     display: inline-block;
     transition: color ease-in-out .3s;
     transition-delay: 100ms;
-    overflow-wrap: break-word; }
+    overflow-wrap: break-word;
+    color: #7b48bd; }
   .project-card__text-divider {
     margin: 0 1rem;
-    color: #95cdb3; }
+    color: #7b48bd; }
   .project-card__description {
     display: inline-block;
     margin-right: 3rem;
@@ -312,7 +313,7 @@ body {
     line-height: 1.3; }
   .project-card:hover .project-card__description {
     opacity: 1;
-    color: #51ab81; }
+    color: rgba(123, 72, 189, 0.8); }
 
 .section {
   margin-bottom: 11rem; }
@@ -339,12 +340,12 @@ body {
   display: grid;
   grid-gap: 2rem;
   align-items: stretch;
-  padding: 1.3rem 2rem 1.8rem 2rem;
+  padding: 1.3rem 2rem;
   transition: all 0.2s;
-  border-left: 1px solid rgba(149, 205, 179, 0.6); }
+  border-left: 1px solid rgba(123, 72, 189, 0.6); }
   @media only screen and (max-width: 43.75em) {
     .certificate {
-      background-color: #f3f8f2;
+      background-color: rgba(140, 108, 255, 0.05);
       border: none;
       border-radius: 0.3rem; } }
   .certificate:hover .certificate__cta {
@@ -352,14 +353,14 @@ body {
     opacity: 1;
     bottom: 1.3rem; }
   .certificate__school {
-    color: #51ab81;
     transition: all 0.2s;
     margin-bottom: .8rem;
     font-weight: 500; }
   .certificate__name {
     font-weight: 400;
     transition: all 0.2s;
-    line-height: 1.3; }
+    line-height: 1.3;
+    color: #7b48bd; }
     .certificate__name--additional-info {
       font-size: 1.5rem;
       color: #ababab;
@@ -367,10 +368,13 @@ body {
       display: block; }
   .certificate__result {
     letter-spacing: .05rem;
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    align-items: end;
-    line-height: 1.5rem; }
+    color: rgba(123, 72, 189, 0.8);
+    align-self: end; }
+  .certificate__logo {
+    display: inline-block;
+    height: auto;
+    width: 2.5rem;
+    transition: all 0.2s; }
   .certificate__cta {
     position: absolute;
     bottom: 0;
@@ -393,7 +397,7 @@ body {
 
 .experience {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 16rem 1fr;
   gap: .5rem 2rem;
   padding: 4rem 0;
   border-bottom: 1px solid #eee; }
@@ -405,19 +409,20 @@ body {
   .experience__title {
     font-weight: 700;
     font-size: 1.8rem;
-    line-height: 1.4; }
+    line-height: 1.4;
+    color: #7b48bd; }
   .experience__date {
     font-size: 1.5rem;
     color: #ababab; }
     .experience__date:after {
       content: '/';
       padding: 0 10px;
-      color: #95cdb3; }
+      color: #7b48bd; }
     @media only screen and (max-width: 43.75em) {
       .experience__date {
         display: block; } }
   .experience__technologies {
-    color: #51ab81;
+    color: rgba(123, 72, 189, 0.8);
     font-size: 1.4rem; }
   .experience__description {
     font-size: 1.4rem;
@@ -439,7 +444,7 @@ body {
       align-self: center; } }
   .navigation__button {
     display: none;
-    background-color: #95cdb3; }
+    background-color: #7b48bd; }
     @media only screen and (max-width: 43.75em) {
       .navigation__button {
         display: block; } }
@@ -501,10 +506,10 @@ body {
     border-radius: 0.3rem 0.3rem 0 0;
     line-height: 2; }
     .navigation__link:hover, .navigation__link:focus {
-      background-color: rgba(149, 205, 179, 0.8);
+      background-color: rgba(123, 72, 189, 0.8);
       color: #fff; }
     .navigation__link.active {
-      background-color: #95cdb3;
+      background-color: #7b48bd;
       color: #fff; }
     @media only screen and (max-width: 43.75em) {
       .navigation__link {
@@ -563,7 +568,7 @@ body {
     .personal-info__contacts--name {
       font-size: 1.8rem;
       margin: 2rem 0 1rem 0;
-      color: #51ab81; }
+      color: rgba(123, 72, 189, 0.8); }
   @media only screen and (max-width: 43.75em) {
     .personal-info {
       position: relative;

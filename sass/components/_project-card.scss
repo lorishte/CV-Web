@@ -26,6 +26,7 @@
 		transition: color ease-in-out .3s;
 		transition-delay: 100ms;
 		overflow-wrap: break-word;
+		color: $color-primary;
 	}
 
 	&__text-divider {
@@ -47,7 +48,7 @@
 
 	&:hover &__description{
 		opacity: 1;
-		color: $color-primary-dark;
+		color: $color-secondary;
 	}
 
 	@include respond('phone') {

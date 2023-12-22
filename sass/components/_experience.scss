@@ -1,6 +1,6 @@
 .experience {
 	display: grid;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: 16rem 1fr;
 	gap: .5rem 2rem;
 	padding: 4rem 0;
 	border-bottom: 1px solid $color-grey-light;
@@ -17,6 +17,7 @@
 		font-weight: 700;
 		font-size: 1.8rem;
 		line-height: 1.4;
+		color: $color-primary;
 	}
 
 	&__info {
@@ -42,7 +43,7 @@
 	}
 
 	&__technologies {
-		color: $color-primary-dark;
+		color: $color-secondary;
 		font-size: 1.4rem;
 	}
 
