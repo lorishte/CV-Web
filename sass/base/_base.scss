@@ -35,12 +35,12 @@ html {
 
 body {
 	box-sizing: border-box;
+	transition: all ease-in-out .5s;
 }
 
 button {
 	background: none;
 	border: none;
-
 }
 
 a {

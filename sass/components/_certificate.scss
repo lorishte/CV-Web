@@ -5,7 +5,24 @@
 	align-items: stretch;
 	padding: 1.3rem 2rem;
 	transition: all $transition-fast;
-	border-left: 1px solid $color-primary-60;
+	border-radius: 1rem;
+	margin-left: -1.4rem;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 0;
+		height: 60%;
+		background-color: $color-primary;
+		//transition: $transition-main;
+		transition: .3s ease-in-out;
+		//transition-delay: .1s;
+		z-index: 0;
+		border-radius: 1rem;
+	}
 
 	@include respond('phone') {
 		background-color: rgba($color-grey-light-bg, .05);
@@ -13,17 +30,34 @@
 		border-radius: $border-radius-tiny;
 	}
 
+	&:hover {
+
+		&:before {
+			width: 110%;
+			height: 105%;
+		}
+	}
+
 	&:hover &__cta {
 		visibility: visible;
 		opacity: 1;
-		bottom: 1.3rem;
+		transform: translateY(0);
 	}
 
-	&:hover &__name {
-		//transform: translateY(1.2rem);
+	&:hover &__name,
+	&:hover &__result {
+		color: $color-white;
 	}
+
+	&:hover &__result {
+		opacity: 1;
+		transform: translateY(0);
+		//margin-top: 0;
+	}
+
 
 	&__info {
+		z-index: 1;
 	}
 
 	&__school {
@@ -51,6 +85,11 @@
 		letter-spacing: .05rem;
 		color: $color-secondary;
 		align-self: end;
+		z-index: 1;
+		opacity: 0;
+		transform: translateY(-1rem);
+		transition: $transition-fast ease-in-out;
+		transition-delay: .3s;
 	}
 
 	&__logo {
@@ -62,17 +101,17 @@
 
 	&__cta {
 		position: absolute;
-		bottom: 0;
-		right: 1.3rem;
+		bottom: 1rem;
+		right: 0;
+		transform: translateY(-1rem);
 		visibility: hidden;
 		opacity: 0;
 		display: grid;
-		max-width: 3rem;
+		max-width: 4rem;
 		justify-self: end;
 		text-align: center;
 		border-radius: $border-radius-tiny;
-		transition: all $transition-fast;
-		padding: .5rem 1rem;
+		transition-delay: .45s;
 
 		@include respond('phone') {
 			visibility: visible;

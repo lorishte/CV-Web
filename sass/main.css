@@ -85,7 +85,8 @@ html {
       font-size: 75%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  transition: all ease-in-out .5s; }
 
 button {
   background: none;
@@ -119,27 +120,35 @@ body {
     body {
       line-height: 1.4; } }
 
-.heading-secondary {
+h2 {
+  color: #7b48bd;
   text-transform: lowercase;
-  font-size: 5rem;
-  margin-bottom: 3rem;
+  font-size: 6.4rem;
+  margin-bottom: 1rem;
   transition: all .2s;
   font-weight: 800; }
   @media only screen and (max-width: 56.25em) {
-    .heading-secondary {
+    h2 {
       font-size: 4rem; } }
   @media only screen and (max-width: 43.75em) {
-    .heading-secondary {
+    h2 {
       font-size: 3.3rem;
       margin-bottom: 1rem; } }
 
-.heading-tertiary {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: .5rem; }
+h3 {
+  font-size: 3.2rem;
+  font-weight: 600; }
   @media only screen and (max-width: 43.75em) {
-    .heading-tertiary {
+    h3 {
       font-size: 1.7rem; } }
+
+h4 {
+  font-size: 2.4rem; }
+
+.subtitle {
+  text-transform: lowercase;
+  margin-bottom: .5rem;
+  color: #7b48bd; }
 
 .text-bold {
   font-weight: 700; }
@@ -204,7 +213,7 @@ body {
   color: #fff;
   background-color: #4b2a75; }
 .btn.xs {
-  padding: .5rem .8rem;
+  padding: 1rem 1rem;
   font-size: 1rem;
   border-radius: 0.3rem; }
 .btn.sm {
@@ -236,7 +245,7 @@ body {
   display: grid;
   grid-template-columns: minmax(max-content, 30%) 1fr;
   align-items: center;
-  grid-gap: 1rem; }
+  grid-gap: 0rem; }
   @media only screen and (max-width: 34.375em) {
     .skill {
       grid-template-columns: minmax(max-content, 40%) 1fr;
@@ -249,13 +258,14 @@ body {
     grid-template-columns: auto 1fr;
     align-items: center;
     column-gap: 1rem; }
-  .skill__logo img {
-    height: 100%;
-    width: auto;
-    max-height: 2.5rem; }
+  .skill__logo {
+    min-width: 5rem; }
+    .skill__logo img {
+      height: 100%;
+      width: auto;
+      max-height: 4.2rem; }
   .skill__name {
-    line-height: 1.3;
-    font-size: 1.6rem; }
+    line-height: 1.3; }
 
 .progress-bar {
   position: relative; }
@@ -263,7 +273,7 @@ body {
     display: grid;
     align-content: center;
     width: 100%;
-    height: .5rem;
+    height: .6rem;
     background-color: rgba(238, 238, 238, 0.5);
     border: 1px solid #eeeeee;
     border-radius: 1rem; }
@@ -327,7 +337,7 @@ body {
     display: grid;
     grid-gap: 1.7rem;
     border-radius: 0.7rem;
-    margin-bottom: 3.5rem; }
+    margin-bottom: 5.5rem; }
     @media only screen and (max-width: 43.75em) {
       .section__subsection {
         grid-gap: 1.2rem; } }
@@ -342,16 +352,39 @@ body {
   align-items: stretch;
   padding: 1.3rem 2rem;
   transition: all 0.2s;
-  border-left: 1px solid rgba(123, 72, 189, 0.6); }
+  border-radius: 1rem;
+  margin-left: -1.4rem; }
+  .certificate:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 60%;
+    background-color: #7b48bd;
+    transition: .3s ease-in-out;
+    z-index: 0;
+    border-radius: 1rem; }
   @media only screen and (max-width: 43.75em) {
     .certificate {
       background-color: rgba(140, 108, 255, 0.05);
       border: none;
       border-radius: 0.3rem; } }
+  .certificate:hover:before {
+    width: 110%;
+    height: 105%; }
   .certificate:hover .certificate__cta {
     visibility: visible;
     opacity: 1;
-    bottom: 1.3rem; }
+    transform: translateY(0); }
+  .certificate:hover .certificate__name, .certificate:hover .certificate__result {
+    color: #fff; }
+  .certificate:hover .certificate__result {
+    opacity: 1;
+    transform: translateY(0); }
+  .certificate__info {
+    z-index: 1; }
   .certificate__school {
     transition: all 0.2s;
     margin-bottom: .8rem;
@@ -369,7 +402,12 @@ body {
   .certificate__result {
     letter-spacing: .05rem;
     color: rgba(123, 72, 189, 0.8);
-    align-self: end; }
+    align-self: end;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-1rem);
+    transition: 0.2s ease-in-out;
+    transition-delay: .3s; }
   .certificate__logo {
     display: inline-block;
     height: auto;
@@ -377,17 +415,17 @@ body {
     transition: all 0.2s; }
   .certificate__cta {
     position: absolute;
-    bottom: 0;
-    right: 1.3rem;
+    bottom: 1rem;
+    right: 0;
+    transform: translateY(-1rem);
     visibility: hidden;
     opacity: 0;
     display: grid;
-    max-width: 3rem;
+    max-width: 4rem;
     justify-self: end;
     text-align: center;
     border-radius: 0.3rem;
-    transition: all 0.2s;
-    padding: .5rem 1rem; }
+    transition-delay: .45s; }
     @media only screen and (max-width: 43.75em) {
       .certificate__cta {
         visibility: visible;
@@ -408,7 +446,6 @@ body {
       grid-template-columns: none; } }
   .experience__title {
     font-weight: 700;
-    font-size: 1.8rem;
     line-height: 1.4;
     color: #7b48bd; }
   .experience__date {
@@ -425,7 +462,6 @@ body {
     color: rgba(123, 72, 189, 0.8);
     font-size: 1.4rem; }
   .experience__description {
-    font-size: 1.4rem;
     line-height: 1.5;
     margin-top: 2rem; }
     .experience__description ul {
@@ -566,9 +602,9 @@ body {
     margin-bottom: 2rem;
     font-size: 1.5rem; }
     .personal-info__contacts--name {
-      font-size: 1.8rem;
+      font-size: 2.4rem;
       margin: 2rem 0 1rem 0;
-      color: rgba(123, 72, 189, 0.8); }
+      color: #7b48bd; }
   @media only screen and (max-width: 43.75em) {
     .personal-info {
       position: relative;
@@ -606,7 +642,7 @@ body {
 .certificates {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 5rem 1rem; }
+  grid-gap: 2rem; }
   @media only screen and (max-width: 43.75em) {
     .certificates {
       grid-gap: .8rem; } }

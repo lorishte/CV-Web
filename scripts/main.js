@@ -54,7 +54,7 @@ toggleMenuBtn.click(function () {
 // Change menu color on scroll
 function highlightActiveMenuOnScroll() {
 
-    let scrollPos = $(document).scrollTop() + headerHeight +10;
+    let scrollPos = $(document).scrollTop() + headerHeight + 10;
 
     // Add class 'active' to pressed menu link, remove class 'active' from current active menu link
     menuLinks.each(function () {
@@ -83,8 +83,8 @@ function animateProgressBars() {
         delayTime = delayTime * 50
 
         $(this).delay(delayTime).animate(
-            {width: fill_value},
-            {duration: 1000 + delayTime * 2},
+            { width: fill_value },
+            { duration: 1000 + delayTime * 2 },
             {
                 specialEasing: {
                     width: "easeInOutBounce"
@@ -98,8 +98,8 @@ function animateProgressBars() {
 function shrinkProgressBars() {
     progressBars.each(function () {
         $(this).animate(
-            {width: 0},
-            {duration: 500 },
+            { width: 0 },
+            { duration: 500 },
             {
                 specialEasing: {
                     width: "easeInOutBounce"
@@ -122,7 +122,7 @@ $('a[href*="#"]')
             let scrollToPosition = $(target).offset().top - headerHeight;
 
             $('html, body')
-                .animate({'scrollTop': scrollToPosition}, 1000);
+                .animate({ 'scrollTop': scrollToPosition }, 1000);
 
             $(document).on('scroll', highlightActiveMenuOnScroll);
 
@@ -151,6 +151,31 @@ function showHidePerson() {
         }
     }
 }
+
+// // Change BG
+// const h2Elements = $('.heading-secondary')
+// window.addEventListener('scroll', () => {
+//     const verticalScrollPx = window.scrollY || window.pageYOffset;
+//     const purple = '#7b48bd'
+//     const white = '#fff'
+//
+//     if (verticalScrollPx < 1000) {
+//         document.body.style.backgroundColor = white;
+//         changeSectionNameColor(purple)
+//     } else if (verticalScrollPx > 1000 && verticalScrollPx < 2200) {
+//         document.body.style.backgroundColor = purple;
+//         changeSectionNameColor(white)
+//     } else {
+//         document.body.style.backgroundColor = white;
+//         changeSectionNameColor(purple)
+//     }
+// });
+//
+// function changeSectionNameColor(color) {
+//     $(h2Elements).each(function () {
+//         $(this).css({ 'color': color });
+//     })
+// }
 
 
 
