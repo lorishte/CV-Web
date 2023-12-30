@@ -1,6 +1,6 @@
 .card {
 	padding: 2rem 0;
-	border-bottom: 1px solid $color-grey-light;
+	border-bottom: 1px solid rgba($color-grey-light, .5);
 
 	&__title {
 		color: $color-primary;

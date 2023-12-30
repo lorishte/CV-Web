@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-columns: minmax(max-content, 30%) 1fr;
 	align-items: center;
-	grid-gap: 0rem;
+	grid-gap: 0;
 
 	&:hover &__name {
 
@@ -36,5 +36,20 @@
 
 	&__name {
 		line-height: 1.3;
+	}
+}
+
+#languages .skill {
+	grid-template-columns: 1fr 3fr;
+	padding: .8rem 0;
+
+	&__name {
+		font-size: 2.4rem;
+		color: $color-primary;
+		font-weight: bold;
+
+		@include respond('phone') {
+			font-size: 2.0rem;
+		}
 	}
 }

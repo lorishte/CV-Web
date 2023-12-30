@@ -1,37 +1,101 @@
 const menuLinks = $('.navigation__link');
 const headerHeight = $('.header').height() + 70;
-const progressBars = $('.progress-bar__filler');
+
 const resPhone = 700;
 const menu = $('.navigation__list')
 const toggleMenuBtn = $('#toggle-menu-btn');
 const personalInfo = $('.person');
-let pageFirstLoad = true;
 
+// Animate fill of progress-bars
+// Progress Bars Observer
+const progressBarsSkills = $('#skills .progress-bar__filler');
+const progressBarsLanguages = $('#languages .progress-bar__filler');
 
-// Create the observer
-const observer = new IntersectionObserver(entries => {
+let progressBarObserverOptions = {
+    rootMargin: '0px',
+    threshold: 0
+}
 
-    // Execute for each observed item
+const progressBarObserver = new IntersectionObserver(progressBarObserverCallback, progressBarObserverOptions);
+
+const progressBarsMapper = {
+    'skills': progressBarsSkills,
+    'languages': progressBarsLanguages
+}
+
+function progressBarObserverCallback(entries, progressBarObserver) {
     entries.forEach(entry => {
+        const sectionIdName = entry.target.id
+        const isIntersecting = entry.isIntersecting
+        const targetedProgressBars = progressBarsMapper[sectionIdName]
 
-        if (entry.isIntersecting) {
-            animateProgressBars();
-            return;
-        }
-
-        if (!pageFirstLoad) {
-            shrinkProgressBars();
-        }
-
-        // To avoid shrinking of progress bars right after first display
-        pageFirstLoad = false;
+        isIntersecting ? animateProgressBars(targetedProgressBars) : shrinkProgressBars(targetedProgressBars)
     });
-});
+}
 
 // Tell the observer which elements to track
-observer.observe(document.querySelector('#skills'));
-observer.observe(document.querySelector('#languages'));
+progressBarObserver.observe(document.querySelector('#skills'));
+progressBarObserver.observe(document.querySelector('#languages'));
 
+// END Progress Bar Observer
+
+
+// Change BG
+// Sections Observer
+const h2Elements = $('.heading-secondary')
+const cardTitles = $('.card__title')
+const certificateNames= $('.certificate__name')
+const experienceTitles = $('.experience__title')
+const experienceNames = $('.experience__technologies')
+
+const textArray = [h2Elements, cardTitles, certificateNames, experienceTitles, experienceNames]
+
+
+function changeTextColor(color) {
+    $(textArray).each(function () {
+        $(this).each(function () {
+            $(this).css({ 'color': color });
+        })
+    })
+}
+
+let sectionsObserverOptions = {
+    rootMargin: '0px',
+    threshold: .5
+}
+
+const sectionsObserver = new IntersectionObserver(sectionsObserverCallback, sectionsObserverOptions);
+
+function sectionsObserverCallback(entries, sectionsObserver) {
+
+    entries.forEach(entry => {
+        const sectionIdName = entry.target.id
+        const isIntersecting = entry.isIntersecting
+        const purple = '#7b48bd'
+        const white = '#fff'
+
+        console.log(sectionIdName)
+
+        if (isIntersecting) {
+            if (sectionIdName === 'education') {
+                document.body.style.backgroundColor = purple;
+                changeTextColor(white)
+            } else {
+                document.body.style.backgroundColor = white;
+                changeTextColor(purple)
+            }
+        }
+    });
+}
+
+// Tell the observer which elements to track
+sectionsObserver.observe(document.querySelector('#skills'));
+sectionsObserver.observe(document.querySelector('#education'));
+sectionsObserver.observe(document.querySelector('#certificates'));
+sectionsObserver.observe(document.querySelector('#languages'));
+sectionsObserver.observe(document.querySelector('#experience'));
+
+// END Sections Observer
 
 $(document).on('scroll', function () {
     highlightActiveMenuOnScroll();
@@ -53,7 +117,6 @@ toggleMenuBtn.click(function () {
 
 // Change menu color on scroll
 function highlightActiveMenuOnScroll() {
-
     let scrollPos = $(document).scrollTop() + headerHeight + 10;
 
     // Add class 'active' to pressed menu link, remove class 'active' from current active menu link
@@ -72,10 +135,9 @@ function highlightActiveMenuOnScroll() {
 }
 
 
-// Animate fill of progress bars
-function animateProgressBars() {
+//Expand progress-bars
+function animateProgressBars(progressBars) {
     progressBars.each(function (delayTime = 0) {
-
         // Get fill percent from html
         let fill_value = $(this).text();
 
@@ -91,11 +153,11 @@ function animateProgressBars() {
                 },
             })
     });
+
 }
 
-
 // Shrink progress bar fill
-function shrinkProgressBars() {
+function shrinkProgressBars(progressBars) {
     progressBars.each(function () {
         $(this).animate(
             { width: 0 },
@@ -108,6 +170,7 @@ function shrinkProgressBars() {
     });
 }
 
+// END - Animate fill of progress bars
 
 // Smooth scroll
 $('a[href*="#"]')
@@ -123,6 +186,7 @@ $('a[href*="#"]')
 
             $('html, body')
                 .animate({ 'scrollTop': scrollToPosition }, 1000);
+            console.log('lora e super')
 
             $(document).on('scroll', highlightActiveMenuOnScroll);
 
@@ -152,30 +216,7 @@ function showHidePerson() {
     }
 }
 
-// // Change BG
-// const h2Elements = $('.heading-secondary')
-// window.addEventListener('scroll', () => {
-//     const verticalScrollPx = window.scrollY || window.pageYOffset;
-//     const purple = '#7b48bd'
-//     const white = '#fff'
-//
-//     if (verticalScrollPx < 1000) {
-//         document.body.style.backgroundColor = white;
-//         changeSectionNameColor(purple)
-//     } else if (verticalScrollPx > 1000 && verticalScrollPx < 2200) {
-//         document.body.style.backgroundColor = purple;
-//         changeSectionNameColor(white)
-//     } else {
-//         document.body.style.backgroundColor = white;
-//         changeSectionNameColor(purple)
-//     }
-// });
-//
-// function changeSectionNameColor(color) {
-//     $(h2Elements).each(function () {
-//         $(this).css({ 'color': color });
-//     })
-// }
+
 
 
 

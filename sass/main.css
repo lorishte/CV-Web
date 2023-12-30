@@ -129,10 +129,10 @@ h2 {
   font-weight: 800; }
   @media only screen and (max-width: 56.25em) {
     h2 {
-      font-size: 4rem; } }
+      font-size: 4.8rem; } }
   @media only screen and (max-width: 43.75em) {
     h2 {
-      font-size: 3.3rem;
+      font-size: 4.0rem;
       margin-bottom: 1rem; } }
 
 h3 {
@@ -140,7 +140,7 @@ h3 {
   font-weight: 600; }
   @media only screen and (max-width: 43.75em) {
     h3 {
-      font-size: 1.7rem; } }
+      font-size: 2.4rem; } }
 
 h4 {
   font-size: 2.4rem; }
@@ -224,7 +224,7 @@ h4 {
 
 .card {
   padding: 2rem 0;
-  border-bottom: 1px solid #eee; }
+  border-bottom: 1px solid rgba(238, 238, 238, 0.5); }
   .card__title {
     color: #7b48bd;
     font-weight: 700; }
@@ -245,7 +245,7 @@ h4 {
   display: grid;
   grid-template-columns: minmax(max-content, 30%) 1fr;
   align-items: center;
-  grid-gap: 0rem; }
+  grid-gap: 0; }
   @media only screen and (max-width: 34.375em) {
     .skill {
       grid-template-columns: minmax(max-content, 40%) 1fr;
@@ -267,6 +267,17 @@ h4 {
   .skill__name {
     line-height: 1.3; }
 
+#languages .skill {
+  grid-template-columns: 1fr 3fr;
+  padding: .8rem 0; }
+  #languages .skill__name {
+    font-size: 2.4rem;
+    color: #7b48bd;
+    font-weight: bold; }
+    @media only screen and (max-width: 43.75em) {
+      #languages .skill__name {
+        font-size: 2.0rem; } }
+
 .progress-bar {
   position: relative; }
   .progress-bar__container {
@@ -275,7 +286,6 @@ h4 {
     width: 100%;
     height: .6rem;
     background-color: rgba(238, 238, 238, 0.5);
-    border: 1px solid #eeeeee;
     border-radius: 1rem; }
   .progress-bar__filler {
     align-self: stretch;
@@ -326,7 +336,8 @@ h4 {
     color: rgba(123, 72, 189, 0.8); }
 
 .section {
-  margin-bottom: 11rem; }
+  margin-bottom: 11rem;
+  min-height: 30vh; }
   @media only screen and (max-width: 43.75em) {
     .section {
       margin-bottom: 7rem; } }
@@ -366,11 +377,6 @@ h4 {
     transition: .3s ease-in-out;
     z-index: 0;
     border-radius: 1rem; }
-  @media only screen and (max-width: 43.75em) {
-    .certificate {
-      background-color: rgba(140, 108, 255, 0.05);
-      border: none;
-      border-radius: 0.3rem; } }
   .certificate:hover:before {
     width: 110%;
     height: 105%; }
@@ -379,10 +385,20 @@ h4 {
     opacity: 1;
     transform: translateY(0); }
   .certificate:hover .certificate__name, .certificate:hover .certificate__result {
-    color: #fff; }
+    color: #fff !important; }
   .certificate:hover .certificate__result {
     opacity: 1;
     transform: translateY(0); }
+  @media only screen and (max-width: 43.75em) {
+    .certificate {
+      margin-left: 0;
+      background-color: rgba(140, 108, 255, 0.05);
+      border: none;
+      border-radius: 0.3rem;
+      padding: 2.5rem 2rem; }
+      .certificate:hover:before {
+        width: 100%;
+        height: 100%; } }
   .certificate__info {
     z-index: 1; }
   .certificate__school {
@@ -408,6 +424,10 @@ h4 {
     transform: translateY(-1rem);
     transition: 0.2s ease-in-out;
     transition-delay: .3s; }
+    @media only screen and (max-width: 43.75em) {
+      .certificate__result {
+        opacity: 1;
+        transform: translateY(0); } }
   .certificate__logo {
     display: inline-block;
     height: auto;
@@ -431,7 +451,7 @@ h4 {
         visibility: visible;
         opacity: 1;
         justify-self: end;
-        bottom: 1.3rem; } }
+        bottom: 0rem; } }
 
 .experience {
   display: grid;
@@ -443,11 +463,17 @@ h4 {
     padding-top: 2rem; }
   @media only screen and (max-width: 43.75em) {
     .experience {
-      grid-template-columns: none; } }
+      grid-template-columns: none;
+      border-bottom: none; } }
   .experience__title {
     font-weight: 700;
     line-height: 1.4;
     color: #7b48bd; }
+  @media only screen and (max-width: 43.75em) {
+    .experience__header {
+      background-color: #eee;
+      padding: 1.6rem;
+      border-radius: 0.7rem; } }
   .experience__date {
     font-size: 1.5rem;
     color: #ababab; }
@@ -457,7 +483,11 @@ h4 {
       color: #7b48bd; }
     @media only screen and (max-width: 43.75em) {
       .experience__date {
-        display: block; } }
+        display: block;
+        margin-left: 1.5rem;
+        color: #323248; }
+        .experience__date:after {
+          display: none; } }
   .experience__technologies {
     color: rgba(123, 72, 189, 0.8);
     font-size: 1.4rem; }
@@ -468,6 +498,9 @@ h4 {
       margin: .5rem 0; }
       .experience__description ul li {
         margin-left: 1.6rem; }
+    @media only screen and (max-width: 43.75em) {
+      .experience__description {
+        padding: .8rem 1.6rem; } }
 
 .navigation {
   grid-column: 2 / 3;
@@ -542,11 +575,14 @@ h4 {
     border-radius: 0.3rem 0.3rem 0 0;
     line-height: 2; }
     .navigation__link:hover, .navigation__link:focus {
-      background-color: rgba(123, 72, 189, 0.8);
-      color: #fff; }
+      background-color: #eee;
+      color: #7b48bd; }
     .navigation__link.active {
       background-color: #7b48bd;
       color: #fff; }
+    .navigation__link:active {
+      background-color: #eee;
+      color: #7b48bd; }
     @media only screen and (max-width: 43.75em) {
       .navigation__link {
         font-size: inherit;

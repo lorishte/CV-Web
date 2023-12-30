@@ -108,14 +108,20 @@
 
 		&:hover,
 		&:focus {
-			background-color: $color-primary-80;
-			color: $color-white;
+			background-color: $color-grey-light;
+			color: $color-primary;
 		}
-
 		&.active {
 			background-color: $color-primary;
 			color: $color-white;
 		}
+
+		&:active {
+			background-color: $color-grey-light;
+			color: $color-primary;
+		}
+
+
 
 		@include respond('phone') {
 			font-size: inherit;
