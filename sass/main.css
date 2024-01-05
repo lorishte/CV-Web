@@ -93,7 +93,7 @@ button {
   border: none; }
 
 a {
-  color: #323248; }
+  color: inherit; }
   a, a:link, a:visited {
     text-decoration: none; }
 
@@ -640,7 +640,8 @@ h4 {
     .personal-info__contacts--name {
       font-size: 2.4rem;
       margin: 2rem 0 1rem 0;
-      color: #7b48bd; }
+      color: #7b48bd;
+      --animate-duration: 2s; }
   @media only screen and (max-width: 43.75em) {
     .personal-info {
       position: relative;

@@ -47,8 +47,10 @@ const cardTitles = $('.card__title')
 const certificateNames= $('.certificate__name')
 const experienceTitles = $('.experience__title')
 const experienceNames = $('.experience__technologies')
+const name = $('.personal-info__contacts--name')
+const personalInfoContacts = $('.personal-info__contacts')
 
-const textArray = [h2Elements, cardTitles, certificateNames, experienceTitles, experienceNames]
+const textArray = [h2Elements, cardTitles, certificateNames, experienceTitles, experienceNames, name]
 
 
 function changeTextColor(color) {
@@ -57,6 +59,10 @@ function changeTextColor(color) {
             $(this).css({ 'color': color });
         })
     })
+}
+
+function changeInfoTextColors(color) {
+    $(personalInfoContacts).css({ 'color': color });
 }
 
 let sectionsObserverOptions = {
@@ -73,6 +79,8 @@ function sectionsObserverCallback(entries, sectionsObserver) {
         const isIntersecting = entry.isIntersecting
         const purple = '#7b48bd'
         const white = '#fff'
+        const grey = '#ababab'
+        const defaultTextColor = '#323248'
 
         console.log(sectionIdName)
 
@@ -80,9 +88,11 @@ function sectionsObserverCallback(entries, sectionsObserver) {
             if (sectionIdName === 'education') {
                 document.body.style.backgroundColor = purple;
                 changeTextColor(white)
+                changeInfoTextColors(grey)
             } else {
                 document.body.style.backgroundColor = white;
                 changeTextColor(purple)
+                changeInfoTextColors(defaultTextColor)
             }
         }
     });
